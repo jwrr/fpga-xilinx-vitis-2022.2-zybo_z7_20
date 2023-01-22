@@ -24,6 +24,7 @@ In Vivado
 
 * Create Block Design named zybo_z7_20_2022_2
   * Add IP ZYNQ7 Processing System
+    * Run Block Automation
     * PS-PL Configuration -> AXI Non-Secure Enablement -> GP Master AXI Interface
       * Unselect M AXI GP0 interface
     * Interrupts -> Fabric interrupts -> PL-PS interrupt Ports
