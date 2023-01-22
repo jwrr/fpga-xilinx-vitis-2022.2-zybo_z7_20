@@ -55,6 +55,9 @@ In Vivado
     * Ignore 'Out-of-context' module runs warning
 * Create HDL Wrapper
   * Sources -> Design Soruces -> right click zybo-z7-2-=base-2022_2 -> Create HDL Wrapper...
+* Generate Bitstream
+  * Flow Navigator -> Program and Debug -> Generate Bitstream
+    * Use default settings, monitor process in 'Design Runs' tab
 
 
 ```
