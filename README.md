@@ -83,7 +83,8 @@ mkdir boot image
 cd ~/vitis/fpga-xilinx-vitis-2022.2-zybo_z7_20/$BOARD_NAME/software
 petalinux-create -t project --template zynq -n ${PROJECT_NAME}-petalinux
 
-petalinux-config --get-hw-description=../../hardware/${PROJECT_NAME}-vivado/
+cd zybo_z7_20_base_2022_2-petalinux
+petalinux-config --get-hw-description=../../hardware/zybo_z7_20_2022_2-vivado/
 ## misc/config System Configuration window
    ## No changes. Just exit.
 
