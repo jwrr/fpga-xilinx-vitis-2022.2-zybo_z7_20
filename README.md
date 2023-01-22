@@ -35,7 +35,9 @@ In Vivado
     * Connect reset and clk_in1 to the corresponding ZYNQ7 output ports.
   * Add three Processor System Resets (one for each clock)
     * Connect slowest_sync_clk, ext_reset_in and dcm_locked.
-  *
+  * Add Concat and connect dout to ZYNQ7 IRQ_f2P input
+    * Change number of ports from 2 to 1.
+  * Regenerate Layout
 
 ```
 mkdir -p ~/vitis/workspace/$BOARD_NAME/software/linux_files

@@ -14,7 +14,8 @@
       "clk_wiz_0": "",
       "proc_sys_reset_0": "",
       "proc_sys_reset_1": "",
-      "proc_sys_reset_2": ""
+      "proc_sys_reset_2": "",
+      "xlconcat_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1271,6 +1272,17 @@
         "xci_name": "zybo_z7_20_base_2022_2_proc_sys_reset_0_2",
         "xci_path": "ip/zybo_z7_20_base_2022_2_proc_sys_reset_0_2/zybo_z7_20_base_2022_2_proc_sys_reset_0_2.xci",
         "inst_hier_path": "proc_sys_reset_2"
+      },
+      "xlconcat_0": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "zybo_z7_20_base_2022_2_xlconcat_0_0",
+        "xci_path": "ip/zybo_z7_20_base_2022_2_xlconcat_0_0/zybo_z7_20_base_2022_2_xlconcat_0_0.xci",
+        "inst_hier_path": "xlconcat_0",
+        "parameters": {
+          "NUM_PORTS": {
+            "value": "1"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -1327,6 +1339,12 @@
           "proc_sys_reset_2/ext_reset_in",
           "proc_sys_reset_1/ext_reset_in",
           "proc_sys_reset_0/ext_reset_in"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "processing_system7_0/IRQ_F2P"
         ]
       }
     }
