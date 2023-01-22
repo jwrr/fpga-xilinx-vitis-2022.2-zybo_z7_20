@@ -29,6 +29,11 @@ In Vivado
       * Unselect M AXI GP0 interface
     * Interrupts -> Fabric interrupts -> PL-PS interrupt Ports
       * Select IRQ_F2P[15:0]
+  * Add Clock Wizard
+    * In Output Clocks configure Clk_out1,2,3 to beh 100/200/300MHz
+    * Set the Reset to Active Low
+  * Connect reset and clk_in1 to the corresponding ZYNQ7 output ports.
+  
 
 ```
 mkdir -p ~/vitis/workspace/$BOARD_NAME/software/linux_files
