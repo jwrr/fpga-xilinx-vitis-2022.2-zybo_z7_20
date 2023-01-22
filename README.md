@@ -45,7 +45,15 @@ In Vivado
   * Clock
     * Enable the 3 clock_outx ports. Change ID to 0, 1, 2. make clock_out1 the default.
   * Interrupt
-    * 
+    * Enable In1 to In7.
+  * Platform Name
+    * Change Board from 'lib' to 'zybo-z7-20'
+    * Change Vendor to 'Digilent'
+* Generate Output Products
+  * Sources -> Design Soruces -> right click zybo-z7-2-=base-2022_2 -> Generate Output Products
+    * Don't change defaults and click 'Generate'
+    * Ignore 'Out-of-context' module runs warning
+    
 
 ```
 mkdir -p ~/vitis/workspace/$BOARD_NAME/software/linux_files

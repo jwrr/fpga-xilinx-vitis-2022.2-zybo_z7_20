@@ -1,14 +1,15 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x0",
+      "boundary_crc": "0xCC6CFA539DDF0AAD",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../zybo_z7_20_2022_2-vivado.gen/sources_1/bd/zybo_z7_20_base_2022_2",
       "name": "zybo_z7_20_base_2022_2",
       "pfm_name": "Digilent:zybo-z7-20:zybo_z7_20_base_2022_2:1.0",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2022.2"
+      "tool_version": "2022.2",
+      "validated": "true"
     },
     "design_tree": {
       "processing_system7_0": "",
@@ -112,27 +113,39 @@
           },
           "BA": {
             "physical_name": "DDR_ba",
-            "direction": "IO"
+            "direction": "IO",
+            "left": "2",
+            "right": "0"
           },
           "ADDR": {
             "physical_name": "DDR_addr",
-            "direction": "IO"
+            "direction": "IO",
+            "left": "14",
+            "right": "0"
           },
           "DM": {
             "physical_name": "DDR_dm",
-            "direction": "IO"
+            "direction": "IO",
+            "left": "3",
+            "right": "0"
           },
           "DQ": {
             "physical_name": "DDR_dq",
-            "direction": "IO"
+            "direction": "IO",
+            "left": "31",
+            "right": "0"
           },
           "DQS_N": {
             "physical_name": "DDR_dqs_n",
-            "direction": "IO"
+            "direction": "IO",
+            "left": "3",
+            "right": "0"
           },
           "DQS_P": {
             "physical_name": "DDR_dqs_p",
-            "direction": "IO"
+            "direction": "IO",
+            "left": "3",
+            "right": "0"
           }
         }
       },
@@ -149,7 +162,9 @@
         "port_maps": {
           "MIO": {
             "physical_name": "FIXED_IO_mio",
-            "direction": "IO"
+            "direction": "IO",
+            "left": "53",
+            "right": "0"
           },
           "DDR_VRN": {
             "physical_name": "FIXED_IO_ddr_vrn",
@@ -1201,16 +1216,16 @@
         "inst_hier_path": "clk_wiz_0",
         "parameters": {
           "CLKOUT1_JITTER": {
-            "value": "151.366"
+            "value": "214.854"
           },
           "CLKOUT1_PHASE_ERROR": {
-            "value": "132.063"
+            "value": "155.997"
           },
           "CLKOUT2_JITTER": {
-            "value": "132.221"
+            "value": "185.991"
           },
           "CLKOUT2_PHASE_ERROR": {
-            "value": "132.063"
+            "value": "155.997"
           },
           "CLKOUT2_REQUESTED_OUT_FREQ": {
             "value": "200.000"
@@ -1219,10 +1234,10 @@
             "value": "true"
           },
           "CLKOUT3_JITTER": {
-            "value": "122.522"
+            "value": "173.176"
           },
           "CLKOUT3_PHASE_ERROR": {
-            "value": "132.063"
+            "value": "155.997"
           },
           "CLKOUT3_REQUESTED_OUT_FREQ": {
             "value": "300.00"
@@ -1231,10 +1246,10 @@
             "value": "true"
           },
           "MMCM_CLKFBOUT_MULT_F": {
-            "value": "6.000"
+            "value": "12.000"
           },
           "MMCM_CLKIN1_PERIOD": {
-            "value": "10.0"
+            "value": "20.0"
           },
           "MMCM_CLKIN2_PERIOD": {
             "value": "10.0"
