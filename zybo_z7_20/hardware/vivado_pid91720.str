@@ -243,3 +243,37 @@ dismissDialog("Create Block Design"); // au
 closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
 dismissDialog("Create Block Design"); // bq
 // Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 154 seconds
+selectButton(PAResourceQtoS.SystemBuilderView_ADD_IP, (String) null); // B
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "zy"); // OverlayTextField
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "zyn"); // OverlayTextField
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 621, 86, 772, 440, false, false, false, true, false); // fK - Popup Trigger
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 209, 152, 772, 440, false, false, false, true, false); // fK - Popup Trigger
+selectMenuItem(PAResourceQtoS.SystemBuilderMenu_ADD_IP, "Add IP..."); // ao
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "zy"); // OverlayTextField
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "zyn"); // OverlayTextField
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "zynq"); // OverlayTextField
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "ZYNQ7 Processing System", 0, "ZYNQ7 Processing System", 0, false, false, false, false, true, false); // z - Popup Trigger
+// Elapsed time: 36 seconds
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "ZYNQ7 Processing System", 0, "ZYNQ7 Processing System", 0, false); // z
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "ZYNQ7 Processing System", 0); // z
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "ZYNQ7 Processing System", 0, "ZYNQ7 Processing System", 0, false, false, false, false, false, true); // z - Double Click
+// TclEventType: LOAD_FEATURE
+// Tcl Message: startgroup 
+// Tcl Message: create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// Tcl Message: endgroup 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,815 MB. GUI used memory: 69 MB. Current time: 1/21/23, 11:57:31 PM EST
+dismissDialog("Add IP"); // bq
+// JavaFX intialization before: 1674363451769
+// JavaFX initialization after: 1674363452234

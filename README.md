@@ -23,7 +23,11 @@ In Vivado
   * Refresh the list of boards and select and download Zybo Z7-20 
 
 * Create Block Design named zybo_z7_20_2022_2
-  * 
+  * Add IP ZYNQ7 Processing System
+    * PS-PL Configuration -> AXI Non-Secure Enablement -> GP Master AXI Interface
+      * Unselect M AXI GP0 interface
+    * Interrupts -> Fabric interrupts -> PL-PS interrupt Ports
+      * Select IRQ_F2P[15:0]
 
 ```
 mkdir -p ~/vitis/workspace/$BOARD_NAME/software/linux_files
