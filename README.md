@@ -19,8 +19,11 @@ vivado &
 In Vivado
 
 * Create Project named zybo_z7_20_2022_2-vivado
-* Select RTL Project, Do not specify sources, and extensible Vitis Platform
-* Select a board type of Zybo 
+  * Select RTL Project, Do not specify sources, and extensible Vitis Platform
+  * Refresh the list of boards and select and download Zybo Z7-20 
+
+* Create Block Design named zybo_z7_20_2022_2
+  * 
 
 ```
 mkdir -p ~/vitis/workspace/$BOARD_NAME/software/linux_files

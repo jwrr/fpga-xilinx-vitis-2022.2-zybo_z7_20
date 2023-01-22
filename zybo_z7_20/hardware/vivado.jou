@@ -17,3 +17,5 @@ xhub::install [xhub::get_xitems digilentinc.com:xilinx_board_store:zybo-z7-20:1.
 create_project zybo_z7_20_2022_2-vivado /home/jwrr/vitis/fpga-xilinx-vitis-2022.2-zybo_z7_20/zybo_z7_20/hardware/zybo_z7_20_2022_2-vivado -part xc7z020clg400-1
 set_property board_part digilentinc.com:zybo-z7-20:part0:1.0 [current_project]
 set_property platform.extensible true [current_project]
+create_bd_design "zybo_z7_20_base_2022_2"
+update_compile_order -fileset sources_1
