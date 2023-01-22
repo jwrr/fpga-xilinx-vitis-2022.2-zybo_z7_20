@@ -38,6 +38,14 @@ In Vivado
   * Add Concat and connect dout to ZYNQ7 IRQ_f2P input
     * Change number of ports from 2 to 1.
   * Regenerate Layout
+* Window -> Platform Setup
+  * AXI Port
+    * Enable all AXI ports except for S_AXI_ACP
+    * Set the SP Ta for the S_AXI_HPx ports to HP0, HP1, HP2 and HP3
+  * Clock
+    * Enable the 3 clock_outx ports. Change ID to 0, 1, 2. make clock_out1 the default.
+  * Interrupt
+    * 
 
 ```
 mkdir -p ~/vitis/workspace/$BOARD_NAME/software/linux_files

@@ -5,6 +5,7 @@
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../zybo_z7_20_2022_2-vivado.gen/sources_1/bd/zybo_z7_20_base_2022_2",
       "name": "zybo_z7_20_base_2022_2",
+      "pfm_name": "Digilent:zybo-z7-20:zybo_z7_20_base_2022_2:1.0",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
       "tool_version": "2022.2"
@@ -1188,6 +1189,9 @@
           "PCW_USE_S_AXI_GP0": {
             "value": "0"
           }
+        },
+        "pfm_attributes": {
+          "AXI_PORT": "M_AXI_GP0 {memport \"M_AXI_GP\" sptag \"\" memory \"\" is_range \"false\"} M_AXI_GP1 {memport \"M_AXI_GP\" sptag \"\" memory \"\" is_range \"false\"} S_AXI_HP0 {memport \"S_AXI_HP\" sptag \"HP0\" memory \"\" is_range \"false\"} S_AXI_HP1 {memport \"S_AXI_HP\" sptag \"HP1\" memory \"\" is_range \"false\"} S_AXI_HP2 {memport \"S_AXI_HP\" sptag \"HP2\" memory \"\" is_range \"false\"} S_AXI_HP3 {memport \"S_AXI_HP\" sptag \"\" memory \"\" is_range \"false\"}"
         }
       },
       "clk_wiz_0": {
@@ -1253,6 +1257,9 @@
           "RESET_TYPE": {
             "value": "ACTIVE_LOW"
           }
+        },
+        "pfm_attributes": {
+          "CLOCK": "clk_out1 {id \"0\" is_default \"true\" proc_sys_reset \"/proc_sys_reset_0\" status \"fixed\" freq_hz \"100000000\"} clk_out2 {id \"1\" is_default \"false\" proc_sys_reset \"/proc_sys_reset_1\" status \"fixed\" freq_hz \"200000000\"} clk_out3 {id \"2\" is_default \"false\" proc_sys_reset \"/proc_sys_reset_2\" status \"fixed\" freq_hz \"300000000\"}"
         }
       },
       "proc_sys_reset_0": {
@@ -1282,6 +1289,9 @@
           "NUM_PORTS": {
             "value": "1"
           }
+        },
+        "pfm_attributes": {
+          "IRQ": "In0 {is_range \"true\"} In1 {is_range \"true\"} In2 {is_range \"true\"} In3 {is_range \"true\"} In4 {is_range \"true\"} In5 {is_range \"true\"} In6 {is_range \"true\"} In7 {is_range \"true\"}"
         }
       }
     },
