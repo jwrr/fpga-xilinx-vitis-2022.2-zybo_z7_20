@@ -2,7 +2,7 @@
 Vitis 2022.2 platform for Zybo Z7-20.
 
 Create New Project
-==================
+------------------
 
 
 
@@ -10,17 +10,20 @@ Create New Project
 export BOARD_NAME=zybo_z7_20
 export VITIS_VERSION=2022_2
 export PROJECT_NAME=${BOARD_NAME}_base_$VITIS_VERSION
+```
 
-mkdir -p ~/vitis/workspace/$BOARD_NAME/hardware
+Make the Hardware in Vivado
+---------------------------
+
+```
+mkdir -p ~/vitis/fpga-xilinx-vitis-2022.2-zybo_z7_20/$BOARD_NAME/hardware
 cd ~/vitis/workspace/$BOARD_NAME/hardware
 vivado &
 ```
 
-In Vivado
-
 * Create Project named zybo_z7_20_2022_2-vivado
   * Select RTL Project, Do not specify sources, and extensible Vitis Platform
-  * Refresh the list of boards and select and download Zybo Z7-20 
+  * Refresh the list of boards and select and download Zybo Z7-20
 
 * Create Block Design named zybo_z7_20_2022_2
   * Add IP ZYNQ7 Processing System
@@ -38,7 +41,8 @@ In Vivado
   * Add Concat and connect dout to ZYNQ7 IRQ_f2P input
     * Change number of ports from 2 to 1.
   * Regenerate Layout
-* Window -> Platform Setup
+* Platform Setup (Configure AXI, Clock and Interrupt ports)
+  * Window -> Platform Setup
   * AXI Port
     * Enable all AXI ports except for S_AXI_ACP
     * Set the SP Ta for the S_AXI_HPx ports to HP0, HP1, HP2 and HP3
@@ -58,6 +62,16 @@ In Vivado
 * Generate Bitstream
   * Flow Navigator -> Program and Debug -> Generate Bitstream
     * Use default settings, monitor process in 'Design Runs' tab
+* Export Design
+  * File -> Export -> Export Platform...
+  * For Platform Type select 'Hardware and emulation'
+* View resulting xsa file
+
+```
+pwd
+ls -l zybo_z7_20/hardware/zybo_z7_20_2022_2-vivado/*xsa
+## -rw-rw-r-- 1 jwrr jwrr 2016635 Jan 22 01:26 zybo_z7_20/hardware/zybo_z7_20_2022_2-vivado/zybo_z7_20_base_2022_2_wrapper.xsa
+```
 
 
 ```
@@ -81,7 +95,7 @@ led ./project-spec/meta-user/conf/user-rootfsconfig
 petalinux-config -c rootfs
 ## user packages menu
    ## Select all packages
-   
+
 petalinux-build
 
 sudo gparted

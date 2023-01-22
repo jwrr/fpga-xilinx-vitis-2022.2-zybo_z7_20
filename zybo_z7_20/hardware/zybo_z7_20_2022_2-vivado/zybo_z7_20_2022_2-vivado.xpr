@@ -62,6 +62,11 @@
     <Option Name="DSABoardId" Val="zybo-z7-20"/>
     <Option Name="DSAName" Val="zybo_z7_20_base_2022_2"/>
     <Option Name="DSAVersion" Val="1.0"/>
+    <Option Name="DSADefaultOutputType" Val="sd_card"/>
+    <Option Name="DSADesignIntentServerManaged" Val="false"/>
+    <Option Name="DSADesignIntentExternalHost" Val="false"/>
+    <Option Name="DSADesignIntentEmbedded" Val="true"/>
+    <Option Name="DSADesignIntentDatacenter" Val="false"/>
     <Option Name="WTXSimLaunchSim" Val="0"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
