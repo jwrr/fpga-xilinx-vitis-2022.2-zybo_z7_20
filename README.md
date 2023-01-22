@@ -53,7 +53,9 @@ In Vivado
   * Sources -> Design Soruces -> right click zybo-z7-2-=base-2022_2 -> Generate Output Products
     * Don't change defaults and click 'Generate'
     * Ignore 'Out-of-context' module runs warning
-    
+* Create HDL Wrapper
+  * Sources -> Design Soruces -> right click zybo-z7-2-=base-2022_2 -> Create HDL Wrapper...
+
 
 ```
 mkdir -p ~/vitis/workspace/$BOARD_NAME/software/linux_files
