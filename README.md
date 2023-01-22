@@ -151,7 +151,7 @@ petalinux-build
 
 echo 
 echo ==================================================
-echo PACKAGE PETALINUX - Package PetaLinux project into a format suitable for deployment. 
+echo PACKAGE PETALINUX - create BOOT.BIN and zynq_fsbl.elf in $PROJECT_BUILD_DIR
 cd $PROJECT_PETALINUX_DIR
 pwd
 echo cp $PROJECT_BUILD_DIR/zynq_fsbl.elf .
