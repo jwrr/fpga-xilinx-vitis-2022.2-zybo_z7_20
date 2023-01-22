@@ -1,0 +1,219 @@
+/*
+
+Xilinx Vivado v2022.2 (64-bit) [Major: 2022, Minor: 2]
+SW Build: 3671981 on Fri Oct 14 04:59:54 MDT 2022
+IP Build: 3669848 on Fri Oct 14 08:30:02 MDT 2022
+
+Process ID (PID): 91720
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sat Jan 21 23:25:45 EST 2023
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Ubuntu
+OS Version: 5.15.0-58-generic
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: 0
+Screen size: 1920x1200
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.11 64-bit
+Java home: 	/tools/Xilinx/Vivado/2022.2/tps/lnx64/jre11.0.11_9
+Java executable: 	/tools/Xilinx/Vivado/2022.2/tps/lnx64/jre11.0.11_9/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Djdk.gtk.version=2, -Dsun.java2d.uiScale.enabled=false, -Xverify:none, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, --add-opens=java.desktop/com.sun.awt=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=60m, -XX:MaxNewSize=60m, -Xms256m, -Xmx3072m, -Xss5m, -Xrs]
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	jwrr
+User home directory: /home/jwrr
+User working directory: /home/jwrr/vitis/fpga-xilinx-vitis-2022.2-zybo_z7_20/zybo_z7_20/hardware
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2022.2
+RDI_DATADIR: /tools/Xilinx/Vivado/2022.2/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2022.2/bin
+
+Vivado preferences file: /home/jwrr/.Xilinx/Vivado/2022.2/vivado.xml
+Vivado preferences directory: /home/jwrr/.Xilinx/Vivado/2022.2/
+Vivado layouts directory: /home/jwrr/.Xilinx/Vivado/2022.2/data/layouts
+PlanAhead jar file: 	/tools/Xilinx/Vivado/2022.2/lib/classes/planAhead.jar
+Vivado log file: 	/home/jwrr/vitis/fpga-xilinx-vitis-2022.2-zybo_z7_20/zybo_z7_20/hardware/vivado.log
+Vivado journal file: 	/home/jwrr/vitis/fpga-xilinx-vitis-2022.2-zybo_z7_20/zybo_z7_20/hardware/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-91720-500w
+
+Xilinx Environment Variables
+----------------------------
+MYVIVADO: /tools/Xilinx
+RDI_APPROOT: /tools/Xilinx:/tools/Xilinx/Vivado/2022.2
+RDI_BASEROOT: /tools/Xilinx/Vivado
+RDI_BINROOT: /tools/Xilinx/Vivado/2022.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /tools/Xilinx/Vivado/2022.2/data
+RDI_INSTALLROOT: /tools/Xilinx
+RDI_INSTALLVER: 2022.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 11.0.11_9
+RDI_LIBDIR: /tools/Xilinx/Vivado/2022.2/lib/lnx64.o/Ubuntu/20:/tools/Xilinx/Vivado/2022.2/lib/lnx64.o/Ubuntu:/tools/Xilinx/Vivado/2022.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: /tools/Xilinx:
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /tools/Xilinx/Vitis/2022.2/bin:/tools/Xilinx/Vivado/2022.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /tools/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/vivado
+RDI_TPS_ROOT: /tools/Xilinx/Vivado/2022.2/tps/lnx64
+RDI_USE_JDK11: True
+XILINX: /tools/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_DSP: /tools/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_HLS: /tools/Xilinx/Vitis_HLS/2022.2
+XILINX_PATH: /tools/Xilinx
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2022.2
+XILINX_SDK: /tools/Xilinx/Vitis/2022.2
+XILINX_VERSION: 2022.2
+XILINX_VITIS: /tools/Xilinx/Vitis/2022.2
+XILINX_VIVADO: /tools/Xilinx/Vivado/2022.2
+XILINX_VIVADO_HLS: /tools/Xilinx/Vivado/2022.2
+
+
+GUI allocated memory:	308 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,532 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,479 MB. GUI used memory: 55 MB. Current time: 1/21/23, 11:25:46 PM EST
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+selectButton(PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, "Create Project"); // u
+// Run Command: PAResourceCommand.PACommandNames_NEW_PROJECT
+selectButton("NEXT", "Next >"); // JButton
+// Elapsed time: 37 seconds
+setText(PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, "zybo_z7_20_2022_2"); // Q
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ao
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// Elapsed time: 87 seconds
+selectButton("NEXT", "Next >"); // JButton
+selectCheckBox(PAResourceItoN.NewProjectWizard_PROJECT_EXTENSIBLE_VITIS_PLATFORM, "Project is an extensible Vitis platform", true); // f: TRUE
+selectCheckBox(PAResourceItoN.NewProjectWizard_DO_NOT_SPECIFY_SOURCES_AT_THIS_TIME, "Do not specify sources at this time", true); // f: TRUE
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// Elapsed time: 184 seconds
+selectCheckBox(PAResourceItoN.NewProjectWizard_DO_NOT_SPECIFY_SOURCES_AT_THIS_TIME, "Do not specify sources at this time", false); // f: FALSE
+selectCheckBox(PAResourceItoN.NewProjectWizard_DO_NOT_SPECIFY_SOURCES_AT_THIS_TIME, "Do not specify sources at this time", true); // f: TRUE
+selectButton("BACK", "< Back"); // JButton
+// Elapsed time: 11 seconds
+setText(PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, "zybo_z7_20_2022_2-vivado"); // Q
+selectButton("NEXT", "Next >"); // JButton
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// Elapsed time: 102 seconds
+selectButton("BACK", "< Back"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// [GUI Memory]: 66 MB (+66386kb) [00:12:56]
+// [Engine Memory]: 1,494 MB (+1415100kb) [00:12:56]
+// [GUI Memory]: 77 MB (+8065kb) [00:12:57]
+// [GUI Memory]: 114 MB (+34754kb) [00:12:57]
+// Elapsed time: 30 seconds
+selectButton("NEXT", "Next >"); // JButton
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// Elapsed time: 51 seconds
+selectTab(PAResourceOtoP.PartChooser_TABBED_PANE, (HResource) null, "Boards", 1); // g
+// HMemoryUtils.trashcanNow. Engine heap size: 1,551 MB. GUI used memory: 57 MB. Current time: 1/21/23, 11:39:26 PM EST
+// Elapsed time: 16 seconds
+setText("PAResourceAtoD.BoardChooser_BOARD_TABLE_SEARCH_FIELD", (String) null); // OverlayTextField
+selectButton(PAResourceAtoD.BoardChooser_REFRESH, "Refresh"); // a
+// TclEventType: LOAD_FEATURE
+// TclEventType: XHUB_XSTORE_DIR_CHANGE
+// TclEventType: XHUB_XSTORE_REFRESH
+// Tcl Message: xhub::refresh_catalog [xhub::get_xstores xilinx_board_store] 
+// TclEventType: XHUB_XSTORE_REFRESH
+// [GUI Memory]: 129 MB (+10196kb) [00:14:15]
+// Tcl Message: xhub::refresh_catalog: Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 6825.664 ; gain = 0.035 ; free physical = 4033 ; free virtual = 12186 
+// Elapsed time: 10 seconds
+dismissDialog("Refresh Catalog"); // bq
+// [GUI Memory]: 230 MB (+98857kb) [00:14:41]
+// [Engine Memory]: 1,628 MB (+62129kb) [00:14:41]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,555 MB. GUI used memory: 58 MB. Current time: 1/21/23, 11:40:16 PM EST
+// Elapsed time: 29 seconds
+setText("PAResourceAtoD.BoardChooser_BOARD_TABLE_SEARCH_FIELD", "zybo"); // OverlayTextField
+selectTreeTable(PAResourceAtoD.BoardChooser_BOARD_TABLE, "Zybo Z7-20 ; Zybo Z7-20 ; Zybo Z7-20 ; digilentinc.com ; 1.0 ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2, "Zybo Z7-20", 0, false); // I
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// TclEventType: XHUB_XITEM_INSTALL
+// TclEventType: BOARD_CATALOG_MODIFIED
+// TclEventType: XHUB_XITEM_INSTALL
+// Tcl Message: set_param board.repoPaths {/home/jwrr/.Xilinx/Vivado/2022.2/xhub/board_store/xilinx_board_store} 
+// Tcl Message: xhub::install [xhub::get_xitems digilentinc.com:xilinx_board_store:zybo-z7-20:1.0] 
+// Tcl Message: INFO: [xhubtcl 76-32] Installing object 'digilentinc.com:xilinx_board_store:zybo-z7-20:1.0' ... INFO: [Common 17-1570] Installing object digilentinc.com:xilinx_board_store:zybo-z7-20:1.0 from remote host https://github.com/Xilinx/XilinxBoardStore.git INFO: [Common 17-1573] Object digilentinc.com:xilinx_board_store:zybo-z7-20:1.0 has been installed successfully. 
+// Tcl Message: INFO: [Common 17-14] Message 'Board 49-26' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. 
+// Elapsed time: 18 seconds
+dismissDialog("Install"); // bq
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// Elapsed time: 22 seconds
+selectButton("NEXT", "Next >"); // JButton
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// WARNING: HEventQueue.dispatchEvent() is taking  2051 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: create_project zybo_z7_20_2022_2-vivado /home/jwrr/vitis/fpga-xilinx-vitis-2022.2-zybo_z7_20/zybo_z7_20/hardware/zybo_z7_20_2022_2-vivado -part xc7z020clg400-1 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: BOARD_MODIFIED
+// Tcl Message: set_property board_part digilentinc.com:zybo-z7-20:part0:1.0 [current_project] 
+// Tcl Command: 'set_property platform.extensible true [current_project]'
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: set_property platform.extensible true [current_project] 
+// Elapsed time: 44 seconds
+selectButton("FINISH", "Finish"); // JButton
+// 'g' command handler elapsed time: 668 seconds
+dismissDialog("Create Project"); // bq
+dismissDialog("New Project"); // f
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag
+// HMemoryUtils.trashcanNow. Engine heap size: 1,653 MB. GUI used memory: 64 MB. Current time: 1/21/23, 11:41:56 PM EST

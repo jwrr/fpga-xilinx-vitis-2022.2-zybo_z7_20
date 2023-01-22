@@ -14,9 +14,15 @@ export PROJECT_NAME=${BOARD_NAME}_base_$VITIS_VERSION
 mkdir -p ~/vitis/workspace/$BOARD_NAME/hardware
 cd ~/vitis/workspace/$BOARD_NAME/hardware
 vivado &
+```
 
+In Vivado
 
+* Create Project named zybo_z7_20_2022_2-vivado
+* Select RTL Project, Do not specify sources, and extensible Vitis Platform
+* Select a board type of Zybo 
 
+```
 mkdir -p ~/vitis/workspace/$BOARD_NAME/software/linux_files
 cd ~/vitis/workspace/$BOARD_NAME/software/linux_files
 mkdir boot image
