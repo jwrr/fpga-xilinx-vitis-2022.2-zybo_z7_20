@@ -11,7 +11,10 @@
     },
     "design_tree": {
       "processing_system7_0": "",
-      "clk_wiz_0": ""
+      "clk_wiz_0": "",
+      "proc_sys_reset_0": "",
+      "proc_sys_reset_1": "",
+      "proc_sys_reset_2": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1250,6 +1253,24 @@
             "value": "ACTIVE_LOW"
           }
         }
+      },
+      "proc_sys_reset_0": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "xci_name": "zybo_z7_20_base_2022_2_proc_sys_reset_0_0",
+        "xci_path": "ip/zybo_z7_20_base_2022_2_proc_sys_reset_0_0/zybo_z7_20_base_2022_2_proc_sys_reset_0_0.xci",
+        "inst_hier_path": "proc_sys_reset_0"
+      },
+      "proc_sys_reset_1": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "xci_name": "zybo_z7_20_base_2022_2_proc_sys_reset_0_1",
+        "xci_path": "ip/zybo_z7_20_base_2022_2_proc_sys_reset_0_1/zybo_z7_20_base_2022_2_proc_sys_reset_0_1.xci",
+        "inst_hier_path": "proc_sys_reset_1"
+      },
+      "proc_sys_reset_2": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "xci_name": "zybo_z7_20_base_2022_2_proc_sys_reset_0_2",
+        "xci_path": "ip/zybo_z7_20_base_2022_2_proc_sys_reset_0_2/zybo_z7_20_base_2022_2_proc_sys_reset_0_2.xci",
+        "inst_hier_path": "proc_sys_reset_2"
       }
     },
     "interface_nets": {
@@ -1267,6 +1288,32 @@
       }
     },
     "nets": {
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "clk_wiz_0/clk_out1",
+          "proc_sys_reset_0/slowest_sync_clk"
+        ]
+      },
+      "clk_wiz_0_clk_out2": {
+        "ports": [
+          "clk_wiz_0/clk_out2",
+          "proc_sys_reset_1/slowest_sync_clk"
+        ]
+      },
+      "clk_wiz_0_clk_out3": {
+        "ports": [
+          "clk_wiz_0/clk_out3",
+          "proc_sys_reset_2/slowest_sync_clk"
+        ]
+      },
+      "clk_wiz_0_locked": {
+        "ports": [
+          "clk_wiz_0/locked",
+          "proc_sys_reset_1/dcm_locked",
+          "proc_sys_reset_0/dcm_locked",
+          "proc_sys_reset_2/dcm_locked"
+        ]
+      },
       "processing_system7_0_FCLK_CLK0": {
         "ports": [
           "processing_system7_0/FCLK_CLK0",
@@ -1276,7 +1323,10 @@
       "processing_system7_0_FCLK_RESET0_N": {
         "ports": [
           "processing_system7_0/FCLK_RESET0_N",
-          "clk_wiz_0/resetn"
+          "clk_wiz_0/resetn",
+          "proc_sys_reset_2/ext_reset_in",
+          "proc_sys_reset_1/ext_reset_in",
+          "proc_sys_reset_0/ext_reset_in"
         ]
       }
     }

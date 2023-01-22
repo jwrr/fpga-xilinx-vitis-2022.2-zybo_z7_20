@@ -32,8 +32,10 @@ In Vivado
   * Add Clock Wizard
     * In Output Clocks configure Clk_out1,2,3 to beh 100/200/300MHz
     * Set the Reset to Active Low
-  * Connect reset and clk_in1 to the corresponding ZYNQ7 output ports.
-  
+    * Connect reset and clk_in1 to the corresponding ZYNQ7 output ports.
+  * Add three Processor System Resets (one for each clock)
+    * Connect slowest_sync_clk, ext_reset_in and dcm_locked.
+  *
 
 ```
 mkdir -p ~/vitis/workspace/$BOARD_NAME/software/linux_files

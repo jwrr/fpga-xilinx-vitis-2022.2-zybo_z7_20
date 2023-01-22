@@ -59,3 +59,21 @@ set_property location {1.5 525 106} [get_bd_cells clk_wiz_0]
 connect_bd_net [get_bd_pins clk_wiz_0/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
 connect_bd_net [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0]
 save_bd_design
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_0
+endgroup
+copy_bd_objs /  [get_bd_cells {proc_sys_reset_0}]
+copy_bd_objs /  [get_bd_cells {proc_sys_reset_0}]
+set_property location {2.5 1008 32} [get_bd_cells proc_sys_reset_0]
+set_property location {3 884 251} [get_bd_cells proc_sys_reset_1]
+set_property location {3 907 428} [get_bd_cells proc_sys_reset_2]
+connect_bd_net [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins clk_wiz_0/clk_out1]
+connect_bd_net [get_bd_pins proc_sys_reset_1/slowest_sync_clk] [get_bd_pins clk_wiz_0/clk_out2]
+connect_bd_net [get_bd_pins proc_sys_reset_2/slowest_sync_clk] [get_bd_pins clk_wiz_0/clk_out3]
+connect_bd_net [get_bd_pins proc_sys_reset_1/dcm_locked] [get_bd_pins clk_wiz_0/locked]
+connect_bd_net [get_bd_pins proc_sys_reset_0/dcm_locked] [get_bd_pins clk_wiz_0/locked]
+connect_bd_net [get_bd_pins proc_sys_reset_2/dcm_locked] [get_bd_pins clk_wiz_0/locked]
+connect_bd_net [get_bd_pins proc_sys_reset_2/ext_reset_in] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+connect_bd_net [get_bd_pins proc_sys_reset_1/ext_reset_in] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+connect_bd_net [get_bd_pins proc_sys_reset_0/ext_reset_in] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+save_bd_design
