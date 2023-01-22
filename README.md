@@ -104,6 +104,10 @@ petalinux-build
 sudo gparted
 ## New size(MIB): 3950, fat32, BOOT
 
+# petalinux-package --boot --format BIN --fsbl zynq_fsbl.elf --u-boot u-boot.elf --fpga system.bit --force
+# cp BOOT.BIN boot.scr image.ub /media/jwrr/BOOT/
 ```
+
+eject SD-Card
 
 
