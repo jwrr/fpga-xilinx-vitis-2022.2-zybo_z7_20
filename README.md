@@ -7,17 +7,30 @@ Create New Project
 
 
 ```
-export BOARD_NAME=zybo_z7_20
-export VITIS_VERSION=2022_2
-export PROJECT_NAME=${BOARD_NAME}_base_$VITIS_VERSION
+vitis_start
+```
+
+```
+export PROJECT_WORKSPACE=$PWD
+export PROJECT_BOARD_NAME=zybo_z7_20
+export PROJECT_VITIS_VERSION=2022_2
+export PROJECT_NAME=${PROJECT_BOARD_NAME}_base_$PROJECT_VITIS_VERSION
+export PROJECT_HARDWARE=$PROJECT_WORKSPACE/$PROJECT_BOARD_NAME/hardware
+export PROJECT_VIVADO=$PROJECT_HARDWARE/${PROJECT_NAME}-vivado
+export PROJECT_XSA=$PROJECT_VIVADO/${PROJECT_NAME}_wrapper.xsa
+export PROJECT_SOFTWARE=$PROJECT_WORKSPACE/$PROJECT_BOARD_NAME/software
+export PROJECT_LINUX_FILES=$PROJECT_SOFTWARE/linux_files
+export PROJECT_PETALINUX=$PROJECT_SOFTWARE/${PROJECT_NAME}-petalinux
+export PROJECT_UDEMY_RESOURCES=~/Downloads/udemy
+env |grep 'PROJECT_.*='
 ```
 
 Make the Hardware in Vivado
 ---------------------------
 
 ```
-mkdir -p ~/vitis/fpga-xilinx-vitis-2022.2-zybo_z7_20/$BOARD_NAME/hardware
-cd ~/vitis/workspace/$BOARD_NAME/hardware
+mkdir -p $PROJECT_HARDWARE
+cd $PROJECT_HARDWARE
 vivado &
 ```
 
@@ -69,7 +82,7 @@ vivado &
 
 ```
 pwd
-ls -l zybo_z7_20/hardware/zybo_z7_20_2022_2-vivado/*xsa
+ls -l $PROJECT_XSA
 ## -rw-rw-r-- 1 jwrr jwrr 2016635 Jan 22 01:26 zybo_z7_20/hardware/zybo_z7_20_2022_2-vivado/zybo_z7_20_base_2022_2_wrapper.xsa
 ```
 
@@ -77,32 +90,79 @@ Make the Software Environment
 -----------------------------
 
 ```
-mkdir -p ~/vitis/fpga-xilinx-vitis-2022.2-zybo_z7_20/$BOARD_NAME/software/linux_files
-cd ~/vitis/fpga-xilinx-vitis-2022.2-zybo_z7_20/$BOARD_NAME/software/linux_files
+echo
+echo ==================================================
+echo CREATE PETALINUX PROJECT ${PROJECT_NAME}-petalinux
+mkdir -p $PROJECT_LINUX_FILES
+cd $PROJECT_LINUX_FILES
 mkdir boot image
-cd ~/vitis/fpga-xilinx-vitis-2022.2-zybo_z7_20/$BOARD_NAME/software
+cd $PROJECT_SOFTWARE
+pwd
+echo petalinux-create -t project --template zynq -n ${PROJECT_NAME}-petalinux
 petalinux-create -t project --template zynq -n ${PROJECT_NAME}-petalinux
 
-cd zybo_z7_20_base_2022_2-petalinux
-petalinux-config --get-hw-description=../../hardware/zybo_z7_20_2022_2-vivado/
+echo 
+echo ==================================================
+echo CONFIGURE PETALINUX PROJECT USING $PROJECT_XSA
+cd $PROJECT_PETALINUX
+pwd
+echo petalinux-config --get-hw-description=$PROJECT_VIVADO
+petalinux-config --get-hw-description=$PROJECT_VIVADO
 ## misc/config System Configuration window
    ## No changes. Just exit.
 
+echo 
+echo ==================================================
+echo CONFIGURE PETALINUX KERNEL - change size in megabytes from 16 to 1024
+cd $PROJECT_PETALINUX
+pwd
 petalinux-config -c kernel
 ## Linux/arm Kernel Configuration menu
    ## Library Routines -> Size in Mega Bytes: Increase from 16 to 1024
 
-led ./project-spec/meta-user/recipes-bsp/devide-tree/fukes/system-user.dtsi
-led ./project-spec/meta-user/conf/user-rootfsconfig
+echo 
+echo ==================================================
+echo EDIT PROJECT-SPEC FILES - copy from $PROJECT_UDEMY_RESOURCES
+cd $PROJECT_PETALINUX
+pwd
+echo $PROJECT_UDEMY_RESOURCES
+ls $PROJECT_UDEMY_RESOURCES
+cat ./project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
+cat $PROJECT_UDEMY_RESOURCES/system-user.dtsi
+cat ./project-spec/meta-user/conf/user-rootfsconfig
+cat $PROJECT_UDEMY_RESOURCES/user-rootfsconfig
 
+cp $PROJECT_UDEMY_RESOURCES/system-user.dtsi ./project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
+cp $PROJECT_UDEMY_RESOURCES/user-rootfsconfig ./project-spec/meta-user/conf/user-rootfsconfig
+cat ./project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
+cat ./project-spec/meta-user/conf/user-rootfsconfig
+
+echo 
+echo ==================================================
+echo CONFIGURE ROOTFS - select all user packages
+cd $PROJECT_PETALINUX
+pwd
+echo petalinux-config -c rootfs
 petalinux-config -c rootfs
 ## user packages menu
    ## Select all packages
 
+echo 
+echo ==================================================
+echo BUILD PETALINUX - this takes a while
+cd $PROJECT_PETALINUX
+pwd
+echo petalinux-build
 petalinux-build
 
 sudo gparted
 ## New size(MIB): 3950, fat32, BOOT
+
+echo 
+echo ==================================================
+echo PACKAGE PETALINUX
+cd $PROJECT_PETALINUX
+pwd
 
 # petalinux-package --boot --format BIN --fsbl zynq_fsbl.elf --u-boot u-boot.elf --fpga system.bit --force
 # cp BOOT.BIN boot.scr image.ub /media/jwrr/BOOT/
