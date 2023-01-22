@@ -73,12 +73,14 @@ ls -l zybo_z7_20/hardware/zybo_z7_20_2022_2-vivado/*xsa
 ## -rw-rw-r-- 1 jwrr jwrr 2016635 Jan 22 01:26 zybo_z7_20/hardware/zybo_z7_20_2022_2-vivado/zybo_z7_20_base_2022_2_wrapper.xsa
 ```
 
+Make the Software Environment
+-----------------------------
 
 ```
-mkdir -p ~/vitis/workspace/$BOARD_NAME/software/linux_files
-cd ~/vitis/workspace/$BOARD_NAME/software/linux_files
+mkdir -p ~/vitis/fpga-xilinx-vitis-2022.2-zybo_z7_20/$BOARD_NAME/software/linux_files
+cd ~/vitis/fpga-xilinx-vitis-2022.2-zybo_z7_20/$BOARD_NAME/software/linux_files
 mkdir boot image
-cd ~/vitis/workspace/$BOARD_NAME/software
+cd ~/vitis/fpga-xilinx-vitis-2022.2-zybo_z7_20/$BOARD_NAME/software
 petalinux-create -t project --template zynq -n ${PROJECT_NAME}-petalinux
 
 petalinux-config --get-hw-description=../../hardware/${PROJECT_NAME}-vivado/
