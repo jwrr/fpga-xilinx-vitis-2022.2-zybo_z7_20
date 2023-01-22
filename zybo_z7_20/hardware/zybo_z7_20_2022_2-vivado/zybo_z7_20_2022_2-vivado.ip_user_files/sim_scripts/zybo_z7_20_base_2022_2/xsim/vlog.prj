@@ -1,0 +1,10 @@
+verilog xil_defaultlib --include "/tools/Xilinx/Vivado/2022.2/data/xilinx_vip/include" --include "../../../../zybo_z7_20_2022_2-vivado.gen/sources_1/bd/zybo_z7_20_base_2022_2/ipshared/ec67/hdl" --include "../../../../zybo_z7_20_2022_2-vivado.gen/sources_1/bd/zybo_z7_20_base_2022_2/ipshared/ee60/hdl" --include "../../../../zybo_z7_20_2022_2-vivado.gen/sources_1/bd/zybo_z7_20_base_2022_2/ipshared/7698" \
+"../../../bd/zybo_z7_20_base_2022_2/ip/zybo_z7_20_base_2022_2_processing_system7_0_0/sim/zybo_z7_20_base_2022_2_processing_system7_0_0.v" \
+"../../../bd/zybo_z7_20_base_2022_2/ip/zybo_z7_20_base_2022_2_clk_wiz_0_0/zybo_z7_20_base_2022_2_clk_wiz_0_0_clk_wiz.v" \
+"../../../bd/zybo_z7_20_base_2022_2/ip/zybo_z7_20_base_2022_2_clk_wiz_0_0/zybo_z7_20_base_2022_2_clk_wiz_0_0.v" \
+"../../../bd/zybo_z7_20_base_2022_2/ip/zybo_z7_20_base_2022_2_xlconcat_0_0/sim/zybo_z7_20_base_2022_2_xlconcat_0_0.v" \
+"../../../bd/zybo_z7_20_base_2022_2/sim/zybo_z7_20_base_2022_2.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort
