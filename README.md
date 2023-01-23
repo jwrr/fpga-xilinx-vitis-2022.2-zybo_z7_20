@@ -94,7 +94,7 @@ pwd
 echo petalinux-create -t project --template zynq -n ${PROJECT_NAME}-petalinux
 petalinux-create -t project --template zynq -n ${PROJECT_NAME}-petalinux
 
-echo 
+echo
 echo ==================================================
 echo CONFIGURE PETALINUX PROJECT USING $PROJECT_XSA_FILE
 cd $PROJECT_PETALINUX_DIR
@@ -104,7 +104,7 @@ petalinux-config --get-hw-description=$PROJECT_VIVADO_DIR
 ## misc/config System Configuration window
    ## No changes. Just exit.
 
-echo 
+echo
 echo ==================================================
 echo CONFIGURE PETALINUX KERNEL - change size in megabytes from 16 to 1024
 cd $PROJECT_PETALINUX_DIR
@@ -113,7 +113,7 @@ petalinux-config -c kernel
 ## Linux/arm Kernel Configuration menu
    ## Library Routines -> Size in Mega Bytes: Increase from 16 to 1024
 
-echo 
+echo
 echo ==================================================
 echo EDIT PROJECT-SPEC FILES - copy from $PROJECT_UDEMY_RESOURCES_DIR
 cd $PROJECT_PETALINUX_DIR
@@ -130,7 +130,7 @@ cp $PROJECT_UDEMY_RESOURCES_DIR/user-rootfsconfig ./project-spec/meta-user/conf/
 cat ./project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
 cat ./project-spec/meta-user/conf/user-rootfsconfig
 
-echo 
+echo
 echo ==================================================
 echo CONFIGURE ROOTFS - select all user packages
 cd $PROJECT_PETALINUX_DIR
@@ -140,7 +140,7 @@ petalinux-config -c rootfs
 ## user packages menu
    ## Select all packages
 
-echo 
+echo
 echo ==================================================
 echo BUILD PETALINUX - results will be copied to /tftpboot
 cd $PROJECT_PETALINUX_DIR
@@ -149,7 +149,7 @@ echo petalinux-build
 [ -d /tftpboot ] || sudo mkdir -m 777 /tftpboot
 petalinux-build
 
-echo 
+echo
 echo ==================================================
 echo PACKAGE PETALINUX - create BOOT.BIN and zynq_fsbl.elf in $PROJECT_BUILD_DIR
 cd $PROJECT_PETALINUX_DIR
@@ -160,17 +160,51 @@ echo cp $PROJECT_BIT_FILE system.bit
 cp $PROJECT_BIT_FILE system.bit
 echo petalinux-package --boot --format BIN --fsbl zynq_fsbl.elf --u-boot $PROJECT_BUILD_DIR/u-boot.elf --fpga system.bit --force
 petalinux-package --boot --format BIN --fsbl zynq_fsbl.elf --u-boot $PROJECT_BUILD_DIR/u-boot.elf --fpga system.bit --force
-
-
-echo 
-echo ==================================================
-echo FORMAT SD-CARD WITH GPARTED - Set size=3950MIB, fat32, BOOT 
-sudo gparted
-
-
-# cp BOOT.BIN boot.scr image.ub /media/jwrr/BOOT/
 ```
 
-eject SD-Card
+Copy files to SD Card
+---------------------
+
+Insert SD-Card
+
+```
+echo
+echo ==================================================
+echo FORMAT SD-CARD WITH GPARTED - Set size=3950MIB, fat32, BOOT
+sudo gparted
+
+cd /tftpboot
+cp BOOT.BIN boot.scr image.ub /media/jwrr/BOOT/
+ls /media/jwrr/BOOT/
+```
+
+Eject SD-Card 
+
+Try using the ZYBO Z7-20
+------------------------
+
+Insert SD-Card into MicroSD connector on the underside of the board, and
+connect the microUSB (also on the underside of the board) to the Linux PC.
+
+
+Bad news... Ubuntu 20.04 doesn't see ZYBO.
+
+```
+lsusb
+```
+
+
+The [Digilent Installation Guide](https://digilent.com/reference/programmable-logic/guides/installing-vivado-and-vitis)
+mentions that USB drivers need to be installed manually.
+
+```
+cd $XILINX_VIVADO/data/xicom/cable_drivers/lin64/install_script/install_drivers/
+sudo ./install_drivers
+groups | grep dialout || sudo adduser $USER dialout
+```
+
+
+
+
 
 
