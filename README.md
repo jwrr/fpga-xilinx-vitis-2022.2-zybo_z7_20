@@ -184,13 +184,14 @@ Try using the ZYBO Z7-20
 ------------------------
 
 Insert SD-Card into MicroSD connector on the underside of the board, and
-connect the microUSB (also on the underside of the board) to the Linux PC.
+connect the microUSB (on topside next to power slider) to the Linux PC.
 
 
 Bad news... Ubuntu 20.04 doesn't see ZYBO.
 
 ```
 lsusb
+sudo dmesg |grep attached
 ```
 
 
@@ -203,8 +204,30 @@ sudo ./install_drivers
 groups | grep dialout || sudo adduser $USER dialout
 ```
 
+Zybo now boots! Connect gtkterm to ttyUSB1 and power cycle Zybo. The boot
+stream is displayed.  At the login prompt enter default username `petalinux`,
+set the password and Linux is running. See
+[UG1144 - PetaLinux Tools Reference Guide](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Login-Changes).
+section Login Changes, for details.
 
+Build SDK
+---------
 
+```
+echo
+echo ==================================================
+echo BUILD SDK
+cd $PROJECT_PETALINUX_DIR/images/linux
+pwd
+echo petalinux-build --sdk
+petalinux-build --sdk
+```
 
+Many warnings/errors when building the SDK similar to:
+  WARNING: nativesdk-packagegroup-sdk-host-1.0-r12 do_packagedata_setscene: No sstate archive obtainable, will run full task instead.
+  ERROR: Logfile of failure stored in: /home/jwrr/git/mine/fpga-xilinx-vitis-2022.2-zybo_z7_20/zybo_z7_20/software/zybo_z7_20_base_2022_2-petalinux/build/tmp/work/x86_64-nativesdk-petalinux-linux/nativesdk-packagegroup-sdk-host/1.0-r12/temp/log.do_packagedata_setscene.7049
+  
+[Xilinx](https://support.xilinx.com/s/article/000033124?language=en_US) recommends to comment out `SSTATE_MIRRORS` in
+`build/conf/plnxtool.conf`.
 
 
