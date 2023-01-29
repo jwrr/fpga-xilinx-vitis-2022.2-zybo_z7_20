@@ -281,7 +281,17 @@ vitis
 # Select $PROJECT_XSA
 # Select Linux Operating System
 
+```
 
 
 ```
+/tools/Xilinx/Vitis/2022.2/data/emulation/qemu/comp/qemu/sysroots/x86_64-petalinux-linux/usr/bin/qemu-system-aarch64 -M "arm-generic-fdt-7series"  -serial "/dev/null"  -serial "mon:stdio"  -device "loader,addr=0xf8000008,data=0xDF0D,data-len=4"  -device "loader,addr=0xf8000140,data=0x00500801,data-len=4"  -device "loader,addr=0xf800012c,data=0x1ed044d,data-len=4"  -device "loader,addr=0xf8000108,data=0x0001e008,data-len=4"  -device "loader,addr=0xF800025C,data=0x00000005,data-len=4"  -device "loader,addr=0xF8000240,data=0x00000000,data-len=4"  -boot "mode=5"  -kernel "/home/jwrr/vitis/platforms/zybo_z7_20_base_2022_2/sw/zybo_z7_20_base_2022_2/qemu/u-boot.elf"  -machine "linux=on"  -hw-dtb /home/jwrr/vitis/workspace/vector_add-vitis_system/Emulation-SW/package/board-versal-ps-cosim-vitis-virt.dtb  -drive "file=/home/jwrr/vitis/workspace/vector_add-vitis_system/Emulation-SW/package/sd_card.img,if=sd,format=raw"  -net "nic,netdev=net0" -netdev "user,id=net0,hostfwd=tcp::7520-:1560,hostfwd=tcp::1440-:1534" -no-reboot -display "none"  -machine-path "."  -global "remote-port.chardesc=tcp:127.0.0.1:7521,server=on,wait"
+
+
+
+
+/tools/Xilinx/Vitis/2022.2/bin/xsct
+# xsct% xsct% connect -host 127.0.0.1 -port 1440                                                                                                                                                                   
+## Connection refused
+
 
