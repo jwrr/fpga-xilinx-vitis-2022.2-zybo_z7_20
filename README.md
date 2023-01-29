@@ -27,7 +27,7 @@ cd $PROJECT_HARDWARE_DIR
 vivado &
 ```
 
-* Create Project named zybo_z7_20_2022_2-vivado
+* Create Project named zybo_z7_20_base_2022_2-vivado
   * Select RTL Project, Do not specify sources, and extensible Vitis Platform
   * Refresh the list of boards and select and download Zybo Z7-20
 
@@ -230,4 +230,58 @@ Many warnings/errors when building the SDK similar to:
 [Xilinx](https://support.xilinx.com/s/article/000033124?language=en_US) recommends to comment out `SSTATE_MIRRORS` in
 `build/conf/plnxtool.conf`.
 
+```
+cd $PROJECT_PETALINUX_DIR/images/linux
+petalinux-build --sdk
+./sdk.sh
+  # at prompt, enter <path_to_workspace>/zybo_z7_20/software/linux_files
+  ##-- PetaLinux SDK installer version 2022.2
+  ##-- ======================================
+  ##-- Enter target directory for SDK (default: /opt/petalinux/2022.2): ~/git/mine/fpga-xilinx-vitis-2022.2-zybo_z7_20/zybo_z7_20/software/linux_files/
+  ##-- You are about to install the SDK to "/home/jwrr/git/mine/fpga-xilinx-vitis-2022.2-zybo_z7_20/zybo_z7_20/software/linux_files". Proceed [Y/n]? y
+  ##-- Extracting SDK...........................................................................................................................................................done
+  ##-- Setting it up...done
+  ##-- SDK has been successfully set up and is ready to be used.
+  ##-- Each time you wish to use the SDK in a new shell session, you need to source the environment setup script e.g.
+  ##--  $ . /home/jwrr/git/mine/fpga-xilinx-vitis-2022.2-zybo_z7_20/zybo_z7_20/software/linux_files/environment-setup-cortexa9t2hf-neon-xilinx-linux-gnueabi
+```
+
+```
+cd $PROJECT_BOOT_DIR/boot
+pwd
+cp $PROJECT_UDEMY_RESOURCES_DIR/linux.bif .
+cat linux.bif
+
+cd $PROJECT_IMAGE_DIR/linux
+cp u-boot.elf $PROJECT_BOOT_DIR
+cp zynq_fsbl.elf $PROJECT_BOOT_DIR/fsbl.elf
+cp boot.scr image.ub rootfs.cpio $PROJECT_IMAGE_DIR
+cd $PROJECT_BOOT_DIR
+cp $PROJECT_UDEMY_RESOURCES_DIR/qemu_args.txt .
+cat qemu_args.txt
+```
+
+```
+### HACK TO GET QEMU TO START
+cp ./vector_add-vitis_system/Emulation-SW/package.build/package/qemu_dts_files/LATEST/MULTI_ARCH/*.dtb /home/jwrr/vitis/workspace/vector_add-vitis_system/Emulation-SW/package/
+
+```
+
+
+Create Hardware Platform
+------------------------
+
+```
+mkdir -p $PROJECT_PLATFORM_DIR
+cd $PROJECT_PLATFORM_DIR
+pwd
+vitis
+# Select workspace $PROJECT_PLATFORM_DIR (use actual hard coded path instead of variable)
+# Create Platform Project and name it $PROJECT_NAME
+# Select $PROJECT_XSA
+# Select Linux Operating System
+
+
+
+```
 
